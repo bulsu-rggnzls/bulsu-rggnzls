@@ -33,17 +33,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 3. Bundle 3D visuals into dist directory
-      - name: Bundle visual assets
-        run: |
-          mkdir -p dist
-          cp -r profile-3d-contrib dist/
-
-      # 4. Deploy assets to output branch
+      # 3. Fix Docker permissions & bundle all assets
       - name: Deploy visuals to output branch
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sudo chown -R $USER:$USER .
+          mkdir -p dist
+          if [ -d "profile-3d-contrib" ]; then
+            cp -r profile-3d-contrib dist/
+          fi
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b output
+          git add -A
+          git commit -m "build: generate profile visuals [skip ci]"
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git output
