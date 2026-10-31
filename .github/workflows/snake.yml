@@ -1,4 +1,4 @@
-name: Generate Profile Visuals
+name: Generate Contribution Snake
 
 on:
   schedule:
@@ -17,13 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Generate 3D Isometric Contribution Calendar
-      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-
-      # 2. Generate Contribution Snake
+      # Generate Contribution Snake
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -33,19 +27,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 3. Fix Docker permissions & bundle all assets
-      - name: Deploy visuals to output branch
+      # Deploy snake to output branch
+      - name: Deploy snake to output branch
         run: |
           sudo chown -R $USER:$USER .
-          mkdir -p dist
-          if [ -d "profile-3d-contrib" ]; then
-            cp -r profile-3d-contrib dist/
-          fi
           cd dist
           git init
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b output
           git add -A
-          git commit -m "build: generate profile visuals [skip ci]"
+          git commit -m "build: update contribution snake [skip ci]"
           git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git output
