@@ -60,12 +60,32 @@ focus:
 
 <br />
 
-| Domain | Technologies |
-| :--- | :--- |
-| **Frontend & UI** | `React` • `Next.js` • `TypeScript` • `JavaScript` • `Tailwind CSS` • `HTML5` • `CSS3` |
-| **Desktop & Mobile** | `Electron` • `React Native` • `Expo` |
-| **Backend & Cloud** | `Node.js` • `Express` • `Supabase` • `REST APIs` |
-| **Workflow & Tooling** | `Git` • `GitHub Actions` • `VS Code` • `Figma` • `Postman` |
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="30%" align="left">Domain</th>
+      <th width="70%" align="left">Technologies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Frontend & UI</b></td>
+      <td><code>React</code> • <code>Next.js</code> • <code>TypeScript</code> • <code>JavaScript</code> • <code>Tailwind CSS</code> • <code>HTML5</code> • <code>CSS3</code></td>
+    </tr>
+    <tr>
+      <td><b>Desktop & Mobile</b></td>
+      <td><code>Electron</code> • <code>React Native</code> • <code>Expo</code></td>
+    </tr>
+    <tr>
+      <td><b>Backend & Cloud</b></td>
+      <td><code>Node.js</code> • <code>Express</code> • <code>Supabase</code> • <code>REST APIs</code></td>
+    </tr>
+    <tr>
+      <td><b>Workflow & Tooling</b></td>
+      <td><code>Git</code> • <code>GitHub Actions</code> • <code>VS Code</code> • <code>Figma</code> • <code>Postman</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -144,8 +164,6 @@ focus:
 
 ---
 
-<!-- Animated Waving Footer -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:064e3b,50:0d1117,100:0d1117&height=120&section=footer" width="100%" alt="Footer Banner" />
-  <p><sub>Crafted with precision • Engineered with passion • BulSU 🏛️</sub></p>
+  <sub>Crafted with care • BulSU 🏛️</sub>
 </div>
