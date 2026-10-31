@@ -147,6 +147,17 @@ focus:
   </picture>
 </div>
 
+<br />
+
+<div align="center">
+  <p><b>🧊 3D Isometric Contribution City</b></p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bulsu-rggnzls/bulsu-rggnzls/output/profile-3d-contrib/profile-night-view.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/bulsu-rggnzls/bulsu-rggnzls/output/profile-3d-contrib/profile-green-animate.svg">
+    <img alt="3D Isometric Contribution Calendar" src="https://raw.githubusercontent.com/bulsu-rggnzls/bulsu-rggnzls/output/profile-3d-contrib/profile-night-view.svg" width="100%" />
+  </picture>
+</div>
+
 ---
 
 ### 📊 Performance & Metrics
